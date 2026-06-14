@@ -32,7 +32,7 @@
 
 \textit{Gravitational content.} The thermodynamic perspective above conditionally recovers the Einstein equations $R_{\mu\nu}-\tfrac12 R\,g_{\mu\nu}=8\pi T_{\mu\nu}$ via the Jacobson argument. Independently, in the spherical sector with $f>0$, the differential conditions $K_1=K_2=1$ for the cost-structural functionals $K_i:=\sigma_2^2\Box\ln\sigma_i$ are shown to be algebraically equivalent to the vacuum Einstein equations $R_{\mu\nu}=0$ (Theorem~\ref{thm:field}). The conditions $K_i=1$ are introduced at the field level as a candidate ansatz, motivated by but not derived from the point-level condition $K=1$ of Law~I; Theorem~\ref{thm:field} is therefore an algebraic reformulation of vacuum Einstein in cost-structural language, not a derivation from the framework axioms. Lorentzian signature is supplied internally at the point level throughout.
 
-\textit{Path-integral extension.} Finally, we formulate a structural path-integral extension in which the ensemble variables are cost geometries $(G,\Phi,H)$, rather than trajectories $x(t)$ or unconstrained spacetime metrics. In a finite-dimensional minisuperspace model, the induced DeWitt-type density behaves as $\rho(G)\propto|\det G|^{-3/2}$, exposing a near-degenerate divergence at $\det G\to0$. A structural barrier $S_{\mathrm{barrier}}=\eta|\det G|^{-p}$, with $\eta,p>0$, renders the reduced measure finite and produces an interior non-degenerate saddle $u_{*}=(\eta p/\alpha)^{1/(p+1)}$. This is a measure-finite SCPI minisuperspace validator (\S\ref{sec:scpi}), not a construction of the full diffeomorphism-invariant gravitational path integral.
+\textit{Path-integral extension.} Finally, we formulate a structural path-integral extension in which the ensemble variables are cost geometries $(G,\Phi,H)$, rather than trajectories $x(t)$ or unconstrained spacetime metrics. In a finite-dimensional minisuperspace model, the induced DeWitt-type density behaves as $\rho(G)\propto|\det G|^{-3/2}$, exposing a near-degenerate divergence at $\det G\to0$. A structural barrier $S_{\mathrm{barrier}}=\eta|\det G|^{-p}$, with $\eta,p>0$, renders the reduced measure finite and produces an interior non-degenerate saddle $u_{*}=(\eta p/\alpha)^{1/(p+1)}$. The corrected finite-dimensional ensemble uses the non-det-flooring support variable $\sigma_1=H/\max_i|\lambda_i(G)|$, so the degenerate boundary is not removed by a hard $\sigma_1$ gate before the barrier mechanism is tested. This is a measure-finite SCPI minisuperspace validator (\S\ref{sec:scpi}), not a construction of the full diffeomorphism-invariant gravitational path integral.
 \end{abstract}
 
 \noindent\textbf{Keywords:} Lorentzian signature; Information time; Symplectic-dissipative dynamics; Jacobson argument; Rindler horizon; Structural path integral; DeWitt measure; Measure finiteness; Minisuperspace; Degenerate metric barrier
@@ -1050,7 +1050,7 @@ minisuperspace validator, not a derivation of the Einstein equations, and
 the thermodynamic and algebraic routes retain their original conditional
 status unaltered.
 
-\subsection{Structural ensemble}
+\subsection{Structural ensemble and the $\sigma_1$ convention}
 
 The ordinary path integral integrates over trajectories $x(t)$, with
 weight $\exp(iS/\hbar)$~\cite{Feynman1948}; a formal gravitational path integral
@@ -1058,8 +1058,8 @@ integrates over spacetime metrics $g_{\mu\nu}$. In the present framework,
 the natural ensemble variables are instead the cost-structure data
 $(G,\Phi,H)$, where $G$ is the signed leading cost form associated with
 the information-time layer, $\Phi$ is the structural variation parameter,
-and $H>0$ is the scalar cost per unit variation. The structural path
-integral is therefore written formally as
+and $H>0$ is the scalar cost per unit variation in the finite-dimensional
+validator. The structural path integral is therefore written formally as
 \begin{equation}\label{eq:scpi-Z}
 Z_{\mathrm{SCPI}}
 =\int_{\mathcal{C}_{\mathrm{SC}}}
@@ -1075,17 +1075,35 @@ over the structural support
 H>0\bigr\}.
 \end{equation}
 The first condition is supplied by Law~I at the level of the signed
-leading form. The second is a structural support condition: subcritical
-cost geometries are excluded from the ensemble outright, rather than
-suppressed only perturbatively, with $\sigma_{1,c}=\hbar/(4\pi)$ the
-self-consistency scale of Proposition~\ref{prop:domain}. In the present
-minisuperspace validator, this soft self-consistency scale is imposed as
-a support restriction in order to test the measure sector; this should
-not be confused with an independently derived hard spacetime discreteness
-scale (cf.\ the soft-bound caveat of \S\ref{sec:singularity}). The
-information-time relation $dt_{\mathrm{info}}=d\Phi/H$ continues to hold,
-so the ensemble is not an integral over trajectories parametrised by an
-external time, but over the cost-structural data themselves.
+leading form. The second is the self-consistency support scale
+$\sigma_{1,c}=\hbar/(4\pi)$ of Proposition~\ref{prop:domain}. In the
+finite-dimensional scalar-$H$ validator used below, the computational
+definition of this support variable is fixed to be the non-det-flooring
+quantity
+\begin{equation}\label{eq:scpi-sigma-v6}
+\sigma_1(G,H)
+:=\lambda_{\min}\!\left(|G|^{-1/2}H|G|^{-1/2}\right),
+\qquad
+\text{hence, for scalar }H,
+\qquad
+\sigma_1(G,H)=\frac{H}{\max_i|\lambda_i(G)|}.
+\end{equation}
+Here $|G|$ denotes the positive spectral modulus of the symmetric form
+$G$. This convention is essential for the measure-finiteness test:
+near-degenerate geometries with one eigenvalue tending to zero are not
+removed automatically by the $\sigma_1$ gate. By contrast, the alternative
+candidate
+\begin{equation}\label{eq:scpi-sigma-old}
+\sigma_{1,\mathrm{old}}(G,H)=\frac{\min_i|\lambda_i(G)|}{H}
+\end{equation}
+drives $\sigma_{1,\mathrm{old}}\to0$ as $\det G\to0$ and therefore cuts out
+the very near-degenerate sector whose integrability the structural
+barrier is supposed to test. Equation~\eqref{eq:scpi-sigma-old} is
+therefore not used for the barrier-finiteness diagnostic; it is retained
+only as a contrast check. The information-time relation
+$dt_{\mathrm{info}}=d\Phi/H$ continues to hold, so the ensemble is not an
+integral over trajectories parametrised by an external time, but over
+the cost-structural data themselves.
 
 \subsection{Finite-dimensional DeWitt-type measure}
 
@@ -1101,22 +1119,23 @@ supermetric~\cite{DeWitt1967} on variations $\delta G$,
 where $\{S_\alpha\}$ is a basis of symmetric $2\times2$ matrices. In this
 minisuperspace model the density reduces to
 \begin{equation}\label{eq:scpi-density}
-\rho(G)\propto|\det G|^{-3/2}.
+\rho(G)=C_\rho |\det G|^{-3/2},
 \end{equation}
-The exponent $-3/2$ is fixed by the supermetric~\eqref{eq:scpi-gram} and
-is verified numerically below. Because $-3/2<-1$, the bare structural
+with $C_\rho=\sqrt2$ for the symmetric-matrix basis used in the numerical
+validator. The exponent $-3/2$ is fixed by the supermetric~\eqref{eq:scpi-gram}
+and is verified numerically below. Because $-3/2<-1$, the bare structural
 measure is singular at the degenerate boundary $\det G\to0$. Writing
 $u:=|\det G|$, the reduced bare measure contains the non-integrable factor
-$u^{-3/2}$, so with an infrared cutoff $u_{\max}$ and a near-degenerate
-cutoff $\epsilon$,
+$u^{-3/2}$, so with an upper cutoff $u_{\max}$ and a near-degenerate cutoff
+$\epsilon$,
 \begin{equation}\label{eq:scpi-bare}
 Z_{\mathrm{bare}}(\epsilon)
 =\int_{\epsilon}^{u_{\max}}u^{-3/2}\,du
 =2\bigl(\epsilon^{-1/2}-u_{\max}^{-1/2}\bigr)
 \xrightarrow{\;\epsilon\to0\;}\infty .
 \end{equation}
-The divergence is a genuine near-degenerate (small-$|\det G|$) effect, not
-a large-geometry one: at large $u$ the integrand decays as $u^{-3/2}$, so
+The divergence is a genuine near-degenerate effect, not a large-geometry
+one: at large $u$ the integrand decays as $u^{-3/2}$, so
 $\int^{\infty}u^{-3/2}\,du$ converges.
 
 \subsection{Barrier-regulated finiteness}
@@ -1132,152 +1151,162 @@ ad hoc hard cutoff. The reduced regulated measure becomes
 \begin{equation}\label{eq:scpi-reg}
 Z_{\mathrm{reg}}(\epsilon)
 =\int_{\epsilon}^{u_{\max}}
-u^{-3/2}\,\exp\!\bigl(-\eta\,u^{-p}\bigr)\,du .
+u^{-3/2}\,
+\exp\!\bigl(-\eta\,u^{-p}\bigr)\,du .
+\end{equation}
+Using the upper incomplete gamma function $\Gamma(s,x)$,
+\begin{equation}\label{eq:scpi-gamma}
+Z_{\mathrm{reg}}(\epsilon)
+=\frac{1}{p}\eta^{-1/(2p)}
+\left[
+\Gamma\!\left(\frac{1}{2p},\eta u_{\max}^{-p}\right)
+-
+\Gamma\!\left(\frac{1}{2p},\eta\epsilon^{-p}\right)
+\right].
 \end{equation}
 Since $\exp(-\eta u^{-p})$ suppresses the integrand faster than any inverse
-power as $u\to0$, the integrand vanishes at the degenerate boundary, and
-the regulated reduced measure is finite and independent of the
-near-degenerate cutoff:
+power as $u\to0$, the regulated reduced measure is finite and independent
+of the near-degenerate cutoff:
 \begin{equation}\label{eq:scpi-finite}
 \lim_{\epsilon\to0}Z_{\mathrm{reg}}(\epsilon)<\infty
 \qquad\text{for all }\eta>0,\;p>0 .
 \end{equation}
 The same barrier also relocates the semiclassical saddle. Combining the
-geometric weight $\alpha\,u$ with the barrier gives the reduced action
-$S(u)=\alpha\,u+\eta\,u^{-p}$, whose stationarity condition
+geometric weight $\alpha u$ with the barrier gives the reduced action
+$S(u)=\alpha u+\eta u^{-p}$, whose stationarity condition
 $dS/du=\alpha-\eta p\,u^{-p-1}=0$ has the unique interior solution
 \begin{equation}\label{eq:scpi-saddle}
 u_{*}=\left(\frac{\eta p}{\alpha}\right)^{1/(p+1)} .
 \end{equation}
 Thus the barrier does two things simultaneously: it renders the degenerate
 boundary integrable, and it repels the semiclassical saddle away from the
-degenerate locus $u=0$ to a non-degenerate interior
-point~\eqref{eq:scpi-saddle}.
+degenerate locus $u=0$ to a non-degenerate interior point~\eqref{eq:scpi-saddle}.
 
-The central result of this section is not a single numerical value but the
-existence of a \emph{robust measure-finite phase}: by~\eqref{eq:scpi-finite},
-$Z_{\mathrm{reg}}$ is finite for every $\eta>0$, $p>0$, and a parameter
-scan exhibits a cutoff-independent plateau across that phase (\S\ref{sec:scpi-num}).
-For the default representative parameters
+The central result of this section is not a universal numerical value but
+the existence of a \emph{robust measure-finite phase}. The absolute value
+of $Z$ depends on the finite box, the normalisation of the measure, the
+shape-sector action, and the parameters $\eta,p$. The invariant diagnostic
+is instead the contrast
+\begin{equation}\label{eq:scpi-contrast}
+\eta=0:\;Z_{\mathrm{bare}}(\epsilon)\sim\epsilon^{-1/2}\to\infty,
+\qquad
+\eta>0:\;Z_{\mathrm{reg}}(\epsilon)\to Z_{\mathrm{reg}}(0)<\infty .
+\end{equation}
+
+\subsection{Corrected finite-dimensional ensemble test}\label{sec:scpi-num}
+
+The corrected finite-dimensional validator implements the scalar-$H$
+minisuperspace ensemble with
+\begin{equation}\label{eq:scpi-Seff}
+S_{\mathrm{eff}}(G,\Phi,H)
+=\alpha |\det G|+\beta_\Phi(\Phi-\pi)^2
++\beta_H\bigl(\log H-\log H_0\bigr)^2
++\eta |\det G|^{-p},
+\end{equation}
+inside the finite box
+\begin{equation}\label{eq:scpi-box}
+G=\begin{pmatrix}a&b\\b&c\end{pmatrix},
+\qquad a,b,c\in[-3,3],
+\qquad \Phi\in[0,2\pi],
+\qquad H\in[0.05,5].
+\end{equation}
+For this box, $u_{\max}=18$. The default numerical parameters are
 \begin{equation}\label{eq:scpi-default}
-\eta=10^{-3},\qquad p=1,\qquad u_{\max}=1,
+\eta=10^{-3},\qquad p=1,
+\qquad \alpha=0.25,
+\qquad \beta_\Phi=1,
+\qquad \beta_H=0.35,
+\qquad H_0=1.
 \end{equation}
-the regulated integral approaches
-\begin{equation}\label{eq:scpi-value}
-Z_{\mathrm{reg}}\approx 54.05 .
+The support condition uses the non-det-flooring definition~\eqref{eq:scpi-sigma-v6};
+the det-flooring definition~\eqref{eq:scpi-sigma-old} is evaluated only as a
+negative-control diagnostic.
+
+\medskip\noindent\textit{(1) $\sigma_1$ mode contrast.}
+A direct support diagnostic gives
+\begin{center}
+\begin{tabular}{lcc}
+\toprule
+$\sigma_1$ mode & support fraction & minimum $|\det G|$ in support \\
+\midrule
+$H/\max_i|\lambda_i(G)|$ & $0.749$ & $1.096\times10^{-5}$ \\
+$\min_i|\lambda_i(G)|/H$ & $0.730$ & $2.064\times10^{-3}$ \\
+\bottomrule
+\end{tabular}
+\end{center}
+The second choice floors the near-degenerate region and would make the
+barrier test vacuous. The default choice keeps near-degenerate geometries
+in the support, so the barrier remains load-bearing.
+
+\medskip\noindent\textit{(2) Cross-validation of the full ensemble integral.}
+The full finite-dimensional integral was estimated by two independent
+methods. Uniform-box Monte Carlo gives the low-efficiency but direct
+reference value
+\begin{equation}\label{eq:scpi-uniform}
+Z_{\mathrm{uniform}}=11122\pm872,
+\qquad \mathrm{ESS}\approx292.
 \end{equation}
-This value is independent of the near-degenerate cutoff $\epsilon$, but it
-is \emph{not} a parameter-free universal constant: it depends on $\eta$,
-$p$, $u_{\max}$, and the overall measure normalisation.
+Importance sampling in $u=|\det G|$, with proposal proportional to the
+regulated reduced measure $u^{-3/2}\exp(-\eta u^{-p})$, gives
+\begin{equation}\label{eq:scpi-is}
+Z_{\mathrm{IS}}=11050.7\pm39.6,
+\qquad \mathrm{ESS}\approx106530.
+\end{equation}
+The ratio is
+\begin{equation}\label{eq:scpi-ratio}
+\frac{Z_{\mathrm{IS}}}{Z_{\mathrm{uniform}}}=0.9936,
+\end{equation}
+consistent within the uniform-box uncertainty, while the effective sample
+size improves by a factor of about $364$. The quoted uncertainty in
+\eqref{eq:scpi-is} is the independent-seed spread; it is not an in-sample
+false precision estimate. Accordingly, the value should be quoted only as
+\begin{equation}\label{eq:scpi-main-value}
+Z_{\mathrm{SCPI}}\approx(1.105\pm0.004)\times10^{4}
+\end{equation}
+for this finite box and this normalisation.
 
-\subsection{Finite-dimensional numerical diagnostics}\label{sec:scpi-num}
+\medskip\noindent\textit{(3) Near-degenerate cutoff sweep.}
+The full importance-sampled ensemble is insensitive to the artificial
+near-degenerate cutoff once the barrier is active:
+\begin{center}
+\begin{tabular}{cc}
+\toprule
+$\epsilon_{\min}$ & $Z_{\mathrm{IS}}$ \\
+\midrule
+$10^{-3}$ & $9242.4\pm18$ \\
+$10^{-5}$ & $11039\pm20$ \\
+$10^{-8}$ & $11039\pm20$ \\
+$10^{-12}$ & $11039\pm20$ \\
+$10^{-16}$ & $11039\pm20$ \\
+\bottomrule
+\end{tabular}
+\end{center}
+The spread over $\epsilon_{\min}\le10^{-5}$ is $3.91\times10^{-10}$ as an
+$\epsilon$-independence diagnostic; it should be read only as cutoff
+insensitivity within Monte Carlo uncertainty, not as a $10^{-10}$ precision
+claim for $Z$.
 
-The finite-dimensional diagnostics support the mechanism above. All are
-either deterministic one-dimensional quadratures or direct evaluations;
-Monte Carlo is unreliable on the near-degenerate tail, where exploding
-variance is itself the signature of the bare divergence, so the
-authoritative checks are deterministic.
-
-\medskip\noindent\textit{(1) DeWitt density scaling.} A log--log fit of the
-density~\eqref{eq:scpi-gram} against $|\det G|$ gives
-\[
-\log\rho(G)\;\text{vs}\;\log|\det G|:\quad\mathrm{slope}=-1.5000,
-\]
-matching the predicted exponent $-3/2$ of~\eqref{eq:scpi-density}.
-
-\medskip\noindent\textit{(2) Effective-sample-size collapse (a caution, not
-a result).} Reweighting by the bare density has a severely collapsed
-effective sample size,
-\[
-\mathrm{ESS}=2.3\ \text{of}\ 4000,
-\qquad \mathrm{ESS}/N=0.001,
-\]
-showing that the bare DeWitt reweighting is dominated by a handful of
-near-degenerate configurations. This collapse is presented as diagnostic
-evidence that the bare measure is pathological and \emph{requires} the
-structural barrier, not as a positive result.
-
-\medskip\noindent\textit{(3) Unregulated loop blow-up (scalar, not
-graviton).} As an auxiliary illustration of why a regulator is needed at
-all, a real $4$-dimensional Euclidean scalar one-loop integral was
-evaluated against its closed form: a converged reference value
-$I(\Lambda_{\mathrm{UV}})=0.995336$ is recovered, whereas at fixed cutoff
-$\Lambda_{\mathrm{UV}}=1000$ the unregulated integral gives
-$I(1000)=6332.5638$, a ratio $I(1000)/I(\Lambda_{\mathrm{UV}})=6362.24$
-exhibiting the expected quadratic-type blow-up. We stress that this is a
-\emph{scalar} loop, not a graviton loop, and is included only to
-illustrate the unregulated-divergence pathology that motivates the
-barrier philosophy; it makes no gravitational claim.
-
-\medskip\noindent\textit{(4) Semiclassical saddle (default point).} For the
-reduced action $S(u)=\alpha u+\eta u^{-p}$ with the default
-parameters~\eqref{eq:scpi-default} and $\alpha=1$, deterministic
-minimisation at the default point gives
-\[
-u_{\mathrm{numeric}}=u_{*}=0.03162,
-\]
-in agreement with~\eqref{eq:scpi-saddle} to relative error
-$3.45\times10^{-5}$, with residual gradient
-$dS/du(u_{*})\approx2.22\times10^{-16}$ (machine precision). This is the
-default-point deterministic saddle check; the maximum relative error over
-the full $\alpha$-sweep is reported separately in item~(9) below.
-
-\medskip\noindent\textit{(5) Measure finiteness.} The bare integral follows
-the predicted power law,
-\[
-Z_{\mathrm{bare}}\sim\epsilon^{-1/2},\qquad\mathrm{slope}=-0.5017,
-\]
-in agreement with~\eqref{eq:scpi-bare}, while the regulated integral with
-the default parameters~\eqref{eq:scpi-default} converges to
-\[
-Z_{\mathrm{reg}}=54.050578,\qquad
-\max\Delta Z=1.51\times10^{-7},
-\]
-the cutoff-stability indicator $\max\Delta Z$ being the maximum successive
-change over the near-degenerate cutoff sweep of item~(7). (An earlier
-diagnostic reported a relative plateau spread of $2.02\times10^{-6}$ over
-the deepest cutoff decade; the present cutoff-stability figure is the
-$\epsilon$-sweep $\max\Delta Z$.)
-
-\medskip\noindent\textit{(6) Phase scan.} An $8\times8$ scan over
-$(\eta,p)$ confirms the measure-finite phase: $57$ cases pass directly,
-$7$ are slow-converging but integrable (the plateau appears only at deeper
-cutoffs, where the barrier is weak), and crucially
-\[
-\text{PASS}=57,\qquad\text{SLOW}=7,\qquad\text{FAIL}=0
-\qquad(\epsilon_{\min}=10^{-10},\;u_{\max}=1).
-\]
-The absence of failures, rather than any single value, is the substantive
-finding.
-
-\medskip\noindent\textit{(7) Near-degenerate cutoff sweep.} Refining
-$\epsilon_{\min}\in\{10^{-6},10^{-8},10^{-10},10^{-12}\}$ at the default
-parameters all give $Z_{\mathrm{reg}}\approx54.050578$, with maximum
-successive change $\Delta Z=1.51\times10^{-7}$, confirming
-$\epsilon$-independence.
-
-\medskip\noindent\textit{(8) Infrared cutoff sweep.} Varying
-$u_{\max}\in\{0.1,1,10,100\}$ gives
-$Z_{\mathrm{reg}}=49.7464,\,54.0506,\,55.4175,\,55.8499$, respectively.
-Since the large-$u$ tail $\int_{u_{\max}}^{\infty}u^{-3/2}\,du
-=2u_{\max}^{-1/2}\to0$, the reduced measure is finite at the
-large-geometry end as well as at the degenerate end.
-
-\medskip\noindent\textit{(9) Saddle scaling.} For $p=1$ a sweep of
-$\alpha\in[10^{-3},10^{3}]$ gives
-\[
-\log u_{*}\;\text{vs}\;\log\alpha:\quad\mathrm{slope}=-0.5000,
-\]
-matching the theoretical exponent $-1/(p+1)=-1/2$ of~\eqref{eq:scpi-saddle},
-with maximum relative saddle error
-\[
-\max_{\alpha\text{-sweep}}\frac{|u_{\mathrm{numeric}}-u_{*}|}{u_{*}}
-=6.91\times10^{-5}
-\]
-across the sweep (to be distinguished from the default-point error
-$3.45\times10^{-5}$ of item~(4)). The barrier-regulated SCPI sector
-therefore does not merely suppress a divergence; it also generates a
-non-degenerate internal scale.
+\medskip\noindent\textit{(4) Reduced analytic witness.}
+For the same $u_{\max}=18$, the reduced bare and regulated measures give
+\begin{center}
+\begin{tabular}{cccc}
+\toprule
+$\epsilon_{\min}$ & bare $\eta=0$ & regulated quadrature & regulated gamma exact \\
+\midrule
+$10^{-3}$  & $62.77$      & $46.7619$ & $46.7619$ \\
+$10^{-5}$  & $632$        & $55.5785$ & $55.5785$ \\
+$10^{-8}$  & $2\times10^{4}$ & $55.5786$ & $55.5785$ \\
+$10^{-12}$ & $2\times10^{6}$ & $55.5787$ & $55.5785$ \\
+$10^{-16}$ & $2\times10^{8}$ & $55.5787$ & $55.5785$ \\
+\bottomrule
+\end{tabular}
+\end{center}
+Thus the unregulated measure diverges with divergence factor
+$Z_{\mathrm{bare}}(10^{-16})/Z_{\mathrm{bare}}(10^{-3})=3.19\times10^{6}$,
+while the regulated reduced measure is cutoff-independent for
+$\epsilon_{\min}\le10^{-5}$. This directly validates the mechanism in
+\eqref{eq:scpi-contrast}: the finiteness is supplied by the structural
+barrier, not by a $\sigma_1$ hard cutoff.
 
 \subsection{Scope}
 
@@ -1292,15 +1321,12 @@ no such claim is made or implied here. Its contribution is narrower but
 nontrivial: the reduced DeWitt-type measure in the finite-dimensional
 cost-geometry minisuperspace becomes finite after the structural barrier
 is included, admitting a robust barrier-regulated finite phase at the
-degenerate boundary together with an interior structural
-scale~\eqref{eq:scpi-saddle}. In this respect the construction is
-analogous in spirit to finite reduced or discrete path-integral models,
-without inheriting their stronger claims. The barrier exponent $p$ and
-weight $\eta$ are at present inputs; whether they can be fixed by the cost
-axioms (Axioms~R, E, T), in the spirit of the $\eta$-weight question of
-Appendix~\ref{app:eta}, is left open (cf.\ Open Problem~7). The route is
-summarised, alongside the thermodynamic and algebraic perspectives, in
-Fig.~\ref{fig:scpi}.
+degenerate boundary together with an interior structural scale~\eqref{eq:scpi-saddle}.
+The barrier exponent $p$ and weight $\eta$ are at present inputs; whether
+they can be fixed by the cost axioms (Axioms~R, E, T), in the spirit of
+the $\eta$-weight question of Appendix~\ref{app:eta}, is left open
+(cf.\ Open Problem~7). The route is summarised, alongside the
+thermodynamic and algebraic perspectives, in Fig.~\ref{fig:scpi}.
 
 \begin{figure}[ht]
 \centering
@@ -1314,29 +1340,34 @@ Fig.~\ref{fig:scpi}.
 ]
 \node[startbox] (K1) {$K{=}1$ framework};
 \node[scpibox, right=of K1] (ens) {$\mathcal{C}_{\mathrm{SC}}$\\[-1pt]\scriptsize cost-geometry ensemble};
-\node[scpibox, right=of ens] (mu) {$\rho(G)\propto|\det G|^{-3/2}$\\[-1pt]\scriptsize DeWitt-type measure};
-\node[scpibox, below=0.8cm of mu] (bar) {$S_{\mathrm{barrier}}=\eta|\det G|^{-p}$};
+\node[scpibox, right=of ens] (sig) {$\sigma_1=H/\max|\lambda(G)|$\\[-1pt]\scriptsize non-det-flooring support};
+\node[scpibox, below=0.8cm of sig] (mu) {$\rho(G)\propto|\det G|^{-3/2}$\\[-1pt]\scriptsize DeWitt-type measure};
+\node[scpibox, left=of mu] (bar) {$S_{\mathrm{barrier}}=\eta|\det G|^{-p}$};
 \node[endbox, left=of bar] (zreg) {$Z_{\mathrm{reg}}<\infty$\\[-1pt]\scriptsize measure-finite phase};
-\node[box, fill=gray!8, left=of zreg] (val) {measure-finite\\ minisuperspace validator};
+\node[box, fill=gray!8, below=0.8cm of zreg] (val) {finite-dimensional\\ minisuperspace validator};
 \draw[arr] (K1) -- (ens);
-\draw[arr] (ens) -- (mu);
+\draw[arr] (ens) -- (sig);
+\draw[arr] (sig) -- (mu);
 \draw[arr] (mu) -- (bar);
 \draw[arr] (bar) -- (zreg);
 \draw[arr] (zreg) -- (val);
 \end{tikzpicture}
 \caption{The structural path-integral (SCPI) route, complementary to the
 thermodynamic and algebraic perspectives of Fig.~\ref{fig:routes}. The
-$K=1$ framework induces an ensemble of admissible cost geometries
-$\mathcal{C}_{\mathrm{SC}}$ with a DeWitt-type measure
-$\rho(G)\propto|\det G|^{-3/2}$, which is non-integrable at the
-degenerate boundary; the structural barrier
-$S_{\mathrm{barrier}}=\eta|\det G|^{-p}$ renders the reduced measure
-finite, yielding a measure-finite minisuperspace validator. Unlike the
-other two routes, this one does \emph{not} terminate at the Einstein
-equations: it validates a finiteness mechanism, not a gravitational
-field equation.}
+$K=1$ framework motivates an ensemble of admissible cost geometries
+$\mathcal{C}_{\mathrm{SC}}$. In the finite-dimensional validator, the
+support uses the non-det-flooring convention
+$\sigma_1=H/\max_i|\lambda_i(G)|$, so near-degenerate geometries remain
+inside the measure sector. The DeWitt-type density
+$\rho(G)\propto|\det G|^{-3/2}$ is non-integrable at the degenerate boundary;
+the structural barrier $S_{\mathrm{barrier}}=\eta|\det G|^{-p}$ renders the
+reduced measure finite, yielding a measure-finite minisuperspace validator.
+Unlike the other two routes, this one does \emph{not} terminate at the
+Einstein equations: it validates a finiteness mechanism, not a
+gravitational field equation.}
 \label{fig:scpi}
 \end{figure}
+
 
 \section{Spacetime thermodynamics (thermodynamic perspective)}\label{sec:thermo}
 
@@ -1748,7 +1779,7 @@ Accordingly, the matter density $\rho=(1-K_2)/(8\pi r^2)$ and the interpretation
 
 \subsection*{Structural path integral as a fourth, exploratory layer}
 
-The SCPI construction of \S\ref{sec:scpi} suggests a statistical extension of the $K=1$ framework in which one integrates over admissible cost geometries rather than over trajectories or unconstrained metrics. The finite-dimensional test carried out there identifies a robust measure-finiteness mechanism: the bare DeWitt-type density $\rho(G)\propto|\det G|^{-3/2}$ is non-integrable near $\det G=0$, while the structural barrier $S_{\mathrm{barrier}}=\eta|\det G|^{-p}$ makes the reduced measure finite and produces an interior saddle $u_{*}=(\eta p/\alpha)^{1/(p+1)}$. Extending this mechanism to a genuine field-theoretic, diffeomorphism-invariant measure remains open. In particular, a full theory would require a covariant definition of the structural measure, a treatment of the $\mathrm{Diff}(M)$ quotient, the analogue of the Faddeev--Popov or BRST sector, and a physical loop expansion for the cost-geometry fields. None of these is attempted here; the present contribution is the identification and validation of the finiteness mechanism in a minisuperspace setting.
+The SCPI construction of \S\ref{sec:scpi} suggests a statistical extension of the $K=1$ framework in which one integrates over admissible cost geometries rather than over trajectories or unconstrained metrics. The finite-dimensional test carried out there identifies a robust measure-finiteness mechanism: using the non-det-flooring support convention $\sigma_1=H/\max_i|\lambda_i(G)|$, the near-degenerate sector remains in the ensemble; the bare DeWitt-type density $\rho(G)\propto|\det G|^{-3/2}$ is non-integrable near $\det G=0$, while the structural barrier $S_{\mathrm{barrier}}=\eta|\det G|^{-p}$ makes the reduced measure finite and produces an interior saddle $u_{*}=(\eta p/\alpha)^{1/(p+1)}$. Extending this mechanism to a genuine field-theoretic, diffeomorphism-invariant measure remains open. In particular, a full theory would require a covariant definition of the structural measure, a treatment of the $\mathrm{Diff}(M)$ quotient, the analogue of the Faddeev--Popov or BRST sector, and a physical loop expansion for the cost-geometry fields. None of these is attempted here; the present contribution is the identification and validation of the finiteness mechanism in a minisuperspace setting.
 
 \subsection*{Extension to $(1{+}3)$ dimensions}
 
